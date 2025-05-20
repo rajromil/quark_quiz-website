@@ -1,43 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Quark Quiz-Interactive Quiz Website</title>
-  <meta name="description" content="Test your knowledge with our interactive multiple-choice quiz. Features background music, sound effects, and immediate feedback on your answers.">
+  <title>My Quiz Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="quiz-container">
-    <div class="quiz-header">
-      <h1>Quark Quiz</h1>
-      <button id="audio-toggle" aria-label="Toggle background music">
-        <svg id="audio-on" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-        </svg>
-        <svg id="audio-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-        </svg>
-      </button>  
-    </div>
-    
-    <div class="progress-bar">
-      <div id="progress-fill"></div>
-    </div>
-    
-    <div id="quiz-content">
-    </div>
+
+  <div id="welcome-screen" class="container">
+     <h1>Welcome to My Quiz!</h1>
+          <p>Test your knowledge with these 10 questions.</p>
+          <p class="instructions">Background music will play during the quiz.<br>Make sure your sound is on!</p>
+       <button id="start-button" class="btn">Start Quiz
+       </button>
   </div>
 
-  <audio id="background-music" loop>
-    <source src="assets/background-music.mp3" type="audio/mpeg">
-  </audio>
+  
+  <div id="quiz-container" class="container hidden">
+    <div class="quiz-header">
+      <h2 id="question">Question text</h2>
+      <div id="question-number">Question 1/10</div>
+  </div>
+
+    <div id="answer-buttons" class="btn-grid">
+      <button class="btn">Answer 1</button>
+       <button class="btn">Answer 2</button>
+      <button class="btn">Answer 3</button>
+      <button class="btn">Answer 4</button>
+    </div>
+
+    <div id="feedback" class="hidden">
+      <p id="feedback-text"></p>
+         <p id="correct-answer"></p>
+       </div>
+
+         <div class="controls">
+         <div id="score-container">Score: <span id="score">0</span></div>
+        <button id="next-btn" class="btn next-btn hidden">Next</button>
+       </div>
+     </div>
+  
+
+     <div id="results-screen" class="container hidden">
+    <h2>Quiz Completed!</h2>
+       <p>Your final score is: <span id="final-score">0</span>/10</p>
+    <div id="results-message"></div>
+     <button id="restart-button" class="btn">Play Again</button>
+  </div>
+  
+
+   <audio id="background-music" loop>
+    <source src="assets/background-music.mp3" type="audio/mp3">
+     </audio>
   <audio id="correct-sound">
-    <source src="assets/correct.mp3" type="audio/mpeg">
-  </audio>
-  <audio id="incorrect-sound">
-    <source src="assets/incorrect.mp3" type="audio/mpeg">
-  </audio>
-</body>
-</html>
+     <source src="assets/correct.mp3" type="audio/mp3">
+    </audio>
+   <audio id="wrong-sound">
+     <source src="assets/incorrect.mp3" type="audio/mp3">
+   </audio>
+
+   <script src="script.js"></script>
+   </body>
+  </html>
