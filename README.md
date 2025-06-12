@@ -47,3 +47,4 @@ A fun and humorous India-themed quiz built with HTML, CSS, and JavaScript. Answe
 
 ![Quiz Screenshot](assets/screenshot.png)  
 
+THIS WAS MADE FOR PRACTICING AND LEARNING CONCEPTS OF JAVASCRIPT
